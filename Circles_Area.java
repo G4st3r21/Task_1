@@ -7,34 +7,34 @@ public class Circles_Area {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
 
-        double leg = InputNum();
+        double leg = legLengthRead();
+        lengthCheck(leg);
 
-        InputCheck(leg);
-
-        double area = Count(leg);
+        double area = areaCount(leg);
+        areaWrite(area);
     }
 
-    static double InputNum() {
+    static double legLengthRead() {
         System.out.print("Enter leg length: ");
         Scanner scanner = new Scanner(System.in);
 
         return scanner.nextDouble();
     }
 
-    static void InputCheck(double leg) {
+    static void lengthCheck(double leg) {
         if (leg < 0) {
             System.out.println("Invalid input format");
             System.exit(0);
         }
     }
 
-    static double Count(double leg) {
+    static double areaCount(double leg) {
         double r = (Math.sqrt(2 * leg * leg) / 2);
 
         return Math.PI * r * r;
     }
 
-    static void WriteAns(double area) {
+    static void areaWrite(double area) {
         System.out.printf("Area of a circle circumscribed around an equilateral triangle: %1$.3f", area);
     }
 }
